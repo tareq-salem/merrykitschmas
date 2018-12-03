@@ -1,6 +1,6 @@
 # Merry Kitschmas
 ## User stories
-### US01
+### US01 - Page d'accueil
 En tant que _UTILISATEUR_  
 je peux _**ACCEDER** A LA PAGE D'ACCUEIL_  
 afin de _**CONSULTER** LES PRODUITS QUE JE PEUX ACHETER_  
