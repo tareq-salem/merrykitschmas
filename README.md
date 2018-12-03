@@ -5,7 +5,7 @@ En tant que _UTILISATEUR_
 je peux _**ACCEDER** A LA PAGE D'ACCUEIL_  
 afin de _**CONSULTER** LES PRODUITS QUE JE PEUX ACHETER_  
 
-### US02
+### US02 - Tri des produits
 En tant que _UTILISATEUR_  
 je peux _**TRIER** LA LISTE DES PRODUITS_  
 afin de _**POUVOIR ORDONNER** LES RESULTATS COMME JE LE SOUHAITE_  
