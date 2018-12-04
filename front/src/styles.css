@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+@font-face {
+    font-family: "XMasFont";
+    src: url('../src/assets/fonts/Mistletoe-Regular.ttf');
+}
+
 html, body {
     margin: 0;
     padding: 0;

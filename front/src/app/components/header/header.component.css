@@ -1,5 +1,5 @@
 mat-toolbar {
-    background-color: rgb(75, 75, 75);
+    background-color: rgb(42, 178, 91);
     color: rgb(255, 255, 255);
     height: 70px;
 }
@@ -14,12 +14,20 @@ mat-toolbar {
 }
 
 input {
-    margin-left: 16px;
     font-size: 12px;
-    padding-bottom: 7px;
+    padding-bottom: 0px;
 }
 
 mat-form-field {
     margin-right: 32px;
 }
 
+.search-icon {
+    font-size: 22px;
+    margin-right: 8px;
+}
+
+p {
+    font-family: "XMasFont", Helvetica, Arial, sans-serif;
+    font-size: 46px;
+}
