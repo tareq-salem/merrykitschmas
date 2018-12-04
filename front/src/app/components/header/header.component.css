@@ -1,12 +1,12 @@
 mat-toolbar {
     background-color: rgb(75, 75, 75);
     color: rgb(255, 255, 255);
-    height: 125px;
+    height: 70px;
 }
 
 .cart-text {
     padding-right: 16px;
-    font-size: 20px;
+    font-size: 12px;
 }
 
 .fill-remaining-space {
@@ -15,8 +15,11 @@ mat-toolbar {
 
 input {
     margin-left: 16px;
+    font-size: 12px;
+    padding-bottom: 7px;
 }
 
 mat-form-field {
     margin-right: 32px;
 }
+
