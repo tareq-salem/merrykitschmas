@@ -1,0 +1,22 @@
+mat-toolbar {
+    background-color: rgb(75, 75, 75);
+    color: rgb(255, 255, 255);
+    height: 125px;
+}
+
+.cart-text {
+    padding-right: 16px;
+    font-size: 20px;
+}
+
+.fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+input {
+    margin-left: 16px;
+}
+
+mat-form-field {
+    margin-right: 32px;
+}
