@@ -1,15 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-// THEME
+/* THEME */
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
-// FONTS
+/* FONTS */
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700|Grand+Hotel');
 @font-face {
     font-family: "XMasFont";
     src: url('../src/assets/fonts/Mistletoe-Regular.ttf');
 }
 
-// GLOBAL RULES
+/* GLOBAL RULES */
 html, body {
   margin: 0;
   padding: 0;

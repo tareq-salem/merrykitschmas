@@ -28,7 +28,8 @@ import {
   MatDividerModule,
   MatCheckboxModule,
   MatListModule,
-  MatCardModule
+  MatCardModule,
+  MatExpansionModule
 } from '@angular/material';
 
 // DIRECTIVES
@@ -62,7 +63,8 @@ import {
     MatDividerModule,
     MatCheckboxModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

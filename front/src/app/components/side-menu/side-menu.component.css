@@ -2,10 +2,19 @@ mat-checkbox {
     margin-left: 16px;
 }
 
+i {
+    margin-right: 16px;
+}
+
 .before-checkbox {
     padding-bottom: 16px;
 }
 
 a {
     color: white !important;
+}
+
+nav > a {
+    /* padding-left: 32px; */
+    font-size: 14px;
 }
