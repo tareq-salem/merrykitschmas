@@ -35,6 +35,7 @@ import {
     MatSelectModule,
     MatExpansionModule
 } from '@angular/material';
+import { OrderToolbarComponent } from './components/welcome/order-toolbar/order-toolbar.component';
 
 // DIRECTIVES
 
@@ -57,7 +58,8 @@ const routes: Routes = [
     CartControlComponent,
     ProductRecommendationsComponent,
     ProductUsersCommentsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    OrderToolbarComponent
   ],
   imports: [
     BrowserModule,

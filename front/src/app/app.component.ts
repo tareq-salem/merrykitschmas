@@ -7,7 +7,7 @@ import { Router, NavigationEnd } from '@angular/router';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-    isSideMenuVisible = true;
+    isSideMenuVisible: boolean;
     isProductPage: boolean;
 
     constructor(private router: Router) {
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
     ngOnInit() {
     this.router.events.subscribe(e => {
         if (e instanceof NavigationEnd) {
-            this.isProductPage = e.url === '/product/id';
+            this.isSideMenuVisible = e.url === '/';
         }
     });
     }
