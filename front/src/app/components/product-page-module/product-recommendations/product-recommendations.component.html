@@ -1,0 +1,4 @@
+<h5>Suggestion pour la catégorie {{ category }}</h5>
+<img class="img-suggestion"
+     *ngFor="let suggestion of suggestions | slice:0:5"
+     src='{{ suggestion.url }}'>

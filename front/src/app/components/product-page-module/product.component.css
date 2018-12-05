@@ -1,0 +1,17 @@
+.img-main-description {
+  display: flex;
+}
+  .img-main {
+    flex-direction: row;
+    height: 500px;
+    width: 350px;
+  }
+
+  .description {
+    flex-direction: row;
+    margin-left: 30px;
+  }
+    .price {
+      font-size: 3rem;
+      font-weight: bold;
+    }

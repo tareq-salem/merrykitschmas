@@ -1,0 +1,33 @@
+<form [formGroup]="form"
+      (ngSubmit)="addToCart(form.value)"
+      class="cart-form" >
+
+  <p>Livraison gratuite dès EUR 25 d'achats en France métropolitaine.</p>
+
+  <!--EN STOCK - PRODUIT INDISPONIBLE-->
+  <span class="stock-ok" *ngIf="stock">Stock disponible</span>
+  <span class="stock-ko" *ngIf="!stock">Stock indisponible pour ce produit</span>
+
+  <!--<div>-->
+    <!--<span>Quantite :</span>-->
+    <!--<mat-form-field>-->
+      <!--<input matInput-->
+             <!--type="number"-->
+             <!--placeholder="quantities"-->
+             <!--formControlName="quantities">-->
+    <!--</mat-form-field>-->
+  <!--</div>-->
+
+
+
+  <!-- AJOUTER AU PANIER -->
+  <div class="add-cart-btn">
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="!stock">
+      Ajouter au panier
+    </button>
+  </div>
+
+</form>

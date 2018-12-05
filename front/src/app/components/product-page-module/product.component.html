@@ -1,0 +1,22 @@
+<div class="container">  <!--permet de centrer le contenu de la page-->
+  <h1>{{ name }}</h1>
+
+  <div class="img-main-description">
+      <img class="img-main" src='{{ image }}'>
+
+      <div class="description">
+          <!-- PRIX -->
+          <span class="price">{{ price }}</span>
+         <!--COMMENTAIRE UTILISATEUR -->
+          <app-product-users-comments></app-product-users-comments>
+          <!-- DESCRIPTION DU PRODUIT -->
+          <p>{{ description }}</p>
+
+          <!--VALIDATION DE LA COMMANDE-->
+          <app-cart-control></app-cart-control>
+
+          <!-- SUGGESTION D'AUTRES PRODUITS -->
+          <app-product-recommendations></app-product-recommendations>
+      </div>
+  </div>
+</div>
