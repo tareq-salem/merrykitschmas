@@ -1,12 +1,12 @@
 <app-header></app-header>
 <mat-sidenav-container class="general-container">
-        <mat-sidenav mode="side" opened role="navigation" class="container-sidenav">
+        <mat-sidenav mode="side" [opened]="!isProductPage" role="navigation" class="container-sidenav">
             <app-side-menu></app-side-menu>
         </mat-sidenav>
         <mat-sidenav-content class="container-body">
             <!-- <app-product></app-product> -->
             <!-- <app-welcome></app-welcome> -->
-            <!-- <router-outlet></router-outlet> -->
+            <router-outlet></router-outlet>
         </mat-sidenav-content>
     </mat-sidenav-container>
 <app-footer></app-footer>

@@ -2,7 +2,7 @@ footer {
     background-color: rgb(75, 75, 75);
     height: 200px;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 64px;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     color: rgb(255, 255, 255);
 }
@@ -14,7 +14,4 @@ a {
 
 p {
     margin-bottom: 32px;
-    /* padding: 0; */
 }
-
-/* 21px & 18 px */
