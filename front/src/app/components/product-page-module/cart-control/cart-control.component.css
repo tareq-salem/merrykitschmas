@@ -4,7 +4,12 @@
 .stock-ko {
   color: red;
 }
-.add-cart-btn {
+.stock-low {
+  color: orangered;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.btn {
   display: flex;
   justify-content: center;
 }
@@ -12,4 +17,31 @@
 .cart-form {
   border: solid 1px black;
   padding: 20px;
+}
+.select {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.mat-select {
+    width: 54px;
+    padding: 10px;
+    margin-left: 20px;
+
+    border: 0.5px solid grey;
+    border-radius: 5px;
+  }
+  .quantities {
+    width: 88px;
+  }
+
+mat-error {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+  margin-right: 20px;
 }

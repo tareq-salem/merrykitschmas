@@ -1,12 +1,12 @@
 // COMPONENTS
 import { AppComponent } from './app.component';
-
+    // HOME PAGE
 import { HeaderComponent } from './components/header/header.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-
+    // PRODUCT PAGE
 import { ProductComponent } from './components/product-page-module/product.component';
 import { CartControlComponent } from './components/product-page-module/cart-control/cart-control.component';
 import {
@@ -20,31 +20,31 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
 
 // MATERIAL
 import {
-  MatButtonModule,
-  MatFormFieldModule,
-  MatToolbarModule,
-  MatInputModule,
-  MatSidenavModule,
-  MatDividerModule,
-  MatCheckboxModule,
-  MatListModule,
-  MatCardModule,
-  MatExpansionModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatSidenavModule,
+    MatDividerModule,
+    MatCheckboxModule,
+    MatListModule,
+    MatCardModule, 
+    MatSelectModule,
+    MatExpansionModule
 } from '@angular/material';
 
 // DIRECTIVES
 
 // ROUTES
+import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', component: WelcomeComponent},
   { path: 'product/id', component: ProductComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
-
 
 @NgModule({
   declarations: [
@@ -75,6 +75,7 @@ const routes: Routes = [
     MatCheckboxModule,
     MatListModule,
     MatCardModule,
+    MatSelectModule
     MatExpansionModule,
     RouterModule.forRoot(routes)
   ],
