@@ -24,7 +24,7 @@ class Product
     private $name;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="float", scale=2)
      */
     private $price;
 
@@ -49,18 +49,12 @@ class Product
     private $created_at;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $updated_at;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="products")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $category;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="product", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="product", orphanRemoval=true, cascade={"persist"})
      */
     private $comments;
 
@@ -85,9 +79,19 @@ class Product
     private $productPurchases;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\ProductParameter", mappedBy="product", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\ProductParameter", mappedBy="product", orphanRemoval=true, cascade={"persist"})
      */
     private $productParameters;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Category", mappedBy="products")
+     */
+    private $categories;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ProductCart", mappedBy="product", orphanRemoval=true)
+     */
+    private $product_carts;
 
     public function __construct()
     {
@@ -97,6 +101,8 @@ class Product
         $this->themes = new ArrayCollection();
         $this->productPurchases = new ArrayCollection();
         $this->productParameters = new ArrayCollection();
+        $this->categories = new ArrayCollection();
+        $this->product_carts = new ArrayCollection();
     }
 
 
@@ -119,12 +125,12 @@ class Product
         return $this;
     }
 
-    public function getPrice(): ?int
+    public function getPrice(): ?float
     {
         return $this->price;
     }
 
-    public function setPrice(int $price): self
+    public function setPrice(float $price): self
     {
         $this->price = $price;
 
@@ -187,18 +193,6 @@ class Product
     public function setUpdatedAt(\DateTimeInterface $updated_at): self
     {
         $this->updated_at = $updated_at;
-
-        return $this;
-    }
-
-    public function getCategory(): ?Category
-    {
-        return $this->category;
-    }
-
-    public function setCategory(?Category $category): self
-    {
-        $this->category = $category;
 
         return $this;
     }
@@ -374,6 +368,65 @@ class Product
             // set the owning side to null (unless already changed)
             if ($productParameter->getProduct() === $this) {
                 $productParameter->setProduct(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Category[]
+     */
+    public function getCategories(): Collection
+    {
+        return $this->categories;
+    }
+
+    public function addCategory(Category $category): self
+    {
+        if (!$this->categories->contains($category)) {
+            $this->categories[] = $category;
+            $category->addProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCategory(Category $category): self
+    {
+        if ($this->categories->contains($category)) {
+            $this->categories->removeElement($category);
+            $category->removeProduct($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ProductCart[]
+     */
+    public function getProductCarts(): Collection
+    {
+        return $this->product_carts;
+    }
+
+    public function addProductCart(ProductCart $productCart): self
+    {
+        if (!$this->product_carts->contains($productCart)) {
+            $this->product_carts[] = $productCart;
+            $productCart->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProductCart(ProductCart $productCart): self
+    {
+        if ($this->product_carts->contains($productCart)) {
+            $this->product_carts->removeElement($productCart);
+            // set the owning side to null (unless already changed)
+            if ($productCart->getProduct() === $this) {
+                $productCart->setProduct(null);
             }
         }
 

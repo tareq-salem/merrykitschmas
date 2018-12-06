@@ -39,6 +39,12 @@ class ProductCart
      */
     private $cart;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Product", inversedBy="product_carts")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $product;
+
     public function __construct()
     {
         $this->productCartOptionsCart = new ArrayCollection();
@@ -133,6 +139,18 @@ class ProductCart
     public function setCart(?Cart $cart): self
     {
         $this->cart = $cart;
+
+        return $this;
+    }
+
+    public function getProduct(): ?Product
+    {
+        return $this->product;
+    }
+
+    public function setProduct(?Product $product): self
+    {
+        $this->product = $product;
 
         return $this;
     }

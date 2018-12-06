@@ -34,17 +34,12 @@ class Users
     private $isactive;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $id_role;
-
-    /**
      * @ORM\Column(type="datetime")
      */
     private $created_at;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $updated_at;
 
@@ -115,18 +110,6 @@ class Users
     public function setIsactive(int $isactive): self
     {
         $this->isactive = $isactive;
-
-        return $this;
-    }
-
-    public function getIdRole(): ?string
-    {
-        return $this->id_role;
-    }
-
-    public function setIdRole(string $id_role): self
-    {
-        $this->id_role = $id_role;
 
         return $this;
     }

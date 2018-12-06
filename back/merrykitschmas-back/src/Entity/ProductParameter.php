@@ -32,6 +32,12 @@ class ProductParameter
      */
     private $product;
 
+    public function __construct($size, $quantity)
+    {
+        $this->size = $size;
+        $this->quantity = $quantity;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
