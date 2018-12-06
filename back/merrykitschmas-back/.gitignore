@@ -17,6 +17,5 @@
 ###< symfony/web-server-bundle ###
 
 ###> OS ###
-/.idea/
-###< OS ###
-
+.idea/
+###> OS ###
