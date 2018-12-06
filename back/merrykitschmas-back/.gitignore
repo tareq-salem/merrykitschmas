@@ -17,4 +17,7 @@
 /.web-server-pid
 ###< symfony/web-server-bundle ###
 
-*.xml
+###> OS ###
+/.idea/
+###< OS ###
+
