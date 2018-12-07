@@ -6,6 +6,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { OrderToolbarComponent } from './components/welcome/order-toolbar/order-toolbar.component';
     // PRODUCT PAGE
 import { ProductComponent } from './components/product-page-module/product.component';
 import { CartControlComponent } from './components/product-page-module/cart-control/cart-control.component';
@@ -31,16 +32,18 @@ import {
     MatDividerModule,
     MatCheckboxModule,
     MatListModule,
-    MatCardModule, 
+    MatCardModule,
     MatSelectModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatGridListModule
 } from '@angular/material';
-import { OrderToolbarComponent } from './components/welcome/order-toolbar/order-toolbar.component';
+
 
 // DIRECTIVES
 
 // ROUTES
 import { RouterModule, Routes } from '@angular/router';
+import { CartButtonComponent } from './components/share/cart-button/cart-button.component';
 const routes: Routes = [
   { path: '', component: WelcomeComponent},
   { path: 'product/id', component: ProductComponent},
@@ -59,7 +62,8 @@ const routes: Routes = [
     ProductRecommendationsComponent,
     ProductUsersCommentsComponent,
     PageNotFoundComponent,
-    OrderToolbarComponent
+    OrderToolbarComponent,
+    CartButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -77,8 +81,9 @@ const routes: Routes = [
     MatCheckboxModule,
     MatListModule,
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
     MatExpansionModule,
+    MatGridListModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

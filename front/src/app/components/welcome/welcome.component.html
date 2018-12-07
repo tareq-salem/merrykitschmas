@@ -1,22 +1,22 @@
 <app-order-toolbar></app-order-toolbar>
-<mat-list>
-    <mat-list-item>
-            <mat-card class="example-card" >
-                <button mat-button routerLink="/product/id">
-                    <div class="img-container">
-                        <img mat-card-image src="https://lepullmoche.shop/wp-content/uploads/2017/10/Screenshot-2017-10-30-Unisexe-70s-Pulls-Retro-No%C3%ABl-Tricots-Top-pour-Hommes-Amazon-fr-V%C3%AAtements-et-accessoires31-e1540011759684.png" alt="">
-                    </div>
-                    <mat-card-header>
-                        <mat-card-title>
-                            <h2>Traîneau du père noël au clair de lune</h2>
-                        </mat-card-title>
-                    </mat-card-header>
-                </button>
-                <mat-card-content>
-                    <p>$45</p>
-                    <span class="fill-remaining-space"></span>
-                    <button mat-button>Ajouter au panier</button>
-                </mat-card-content>
-            </mat-card>
-    </mat-list-item>    
-</mat-list>
+<mat-grid-list [cols]='numberOfCols' rowHeight="1:1" (window:resize)="onResize()" >
+    <mat-grid-tile *ngFor="let product of products">
+        <ul class="card-container">
+            <li class="card-image">
+                <a href="/product/id">
+                    <img src='{{product?.img}}' alt="">
+                </a>
+            </li>
+            <li class="card-title">
+                <a href="/product/id">
+                    <h2>{{product?.title}}</h2>
+                </a>
+            </li>
+            <li class="card-info">
+                <p>{{product?.price}}</p>
+                <app-cart-button></app-cart-button>
+            </li>
+        </ul>
+    </mat-grid-tile>
+</mat-grid-list>
+

@@ -11,10 +11,15 @@ i {
 }
 
 a {
-    color: white !important;
+    color: #129b0d !important;
 }
 
 nav > a {
     /* padding-left: 32px; */
     font-size: 14px;
+    color: #ce1158 !important;
+}
+
+mat-nav-list {
+    margin-top : 64px;
 }

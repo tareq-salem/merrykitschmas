@@ -1,3 +1,4 @@
+import { CategoriesService } from './../../services/categories.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
+    numberOfCols = 3;
+    public products: any[];
 
-  constructor() { }
+    constructor(private categoriesService: CategoriesService) {
 
-  ngOnInit() {
-  }
+    }
 
+    ngOnInit() {
+        this.onResize();
+
+        // this.categoriesService.getAllProducts()
+        // .subscribe( (res: any[]) => {
+        //     this.products = res;
+        // });
+
+        this.categoriesService.getAllProducts()
+            .then((products: any[]) => this.products = products)
+            .catch(error => console.log(error));
+    }
+
+    onResize() {
+        if (window.innerWidth >= 2100) {
+            this.numberOfCols = 4;
+        } else if (window.innerWidth >= 1350 && window.innerWidth < 2100) {
+            this.numberOfCols = 3;
+        } else if (window.innerWidth >= 1000 && window.innerWidth < 1350) {
+            this.numberOfCols = 2;
+        } else if (window.innerWidth < 1000) {
+            this.numberOfCols = 1;
+        } else {
+            this.numberOfCols = 3;
+        }
+    }
 }

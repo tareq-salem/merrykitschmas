@@ -1,5 +1,9 @@
 mat-toolbar {
-    background-image: linear-gradient(to right, rgb(42, 178, 91),  rgb(70, 146, 45));
+    /* background-image: linear-gradient(to right, rgb(42, 178, 91),  rgb(70, 146, 45)); */
+    background-color: #1ce8a4;
+    background-color: #eaff1f;
+    background-color: #e81363;
+    background-color: #ce1158;
     color: rgb(255, 255, 255);
     height: 70px;
     box-shadow: 0px 2px 12px #555;
