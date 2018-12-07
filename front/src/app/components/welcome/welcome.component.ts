@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-    numberOfCols = 3;
+    numberOfCols = 4;
     public products: any[];
 
     constructor(private categoriesService: CategoriesService) {
@@ -28,13 +28,13 @@ export class WelcomeComponent implements OnInit {
     }
 
     onResize() {
-        if (window.innerWidth >= 2100) {
+        if (window.innerWidth >= 1440) {
             this.numberOfCols = 4;
-        } else if (window.innerWidth >= 1350 && window.innerWidth < 2100) {
+        } else if (window.innerWidth >= 1024 && window.innerWidth < 1440) {
             this.numberOfCols = 3;
-        } else if (window.innerWidth >= 1000 && window.innerWidth < 1350) {
+        } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
             this.numberOfCols = 2;
-        } else if (window.innerWidth < 1000) {
+        } else if (window.innerWidth < 768) {
             this.numberOfCols = 1;
         } else {
             this.numberOfCols = 3;
