@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProductParameterRepository")
@@ -18,11 +19,13 @@ class ProductParameter
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"api"});
      */
     private $size;
 
     /**
      * @ORM\Column(type="integer")
+     * @Groups({"api"});
      */
     private $quantity;
 

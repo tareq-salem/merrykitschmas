@@ -34,7 +34,7 @@ class ProductCart
     private $productCartOptionsProduct;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Cart", inversedBy="productCart")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Cart", inversedBy="productCarts")
      * @ORM\JoinColumn(nullable=false)
      */
     private $cart;

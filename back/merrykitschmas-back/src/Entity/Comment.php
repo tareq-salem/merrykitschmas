@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CommentRepository")
@@ -18,27 +19,32 @@ class Comment
 
     /**
      * @ORM\Column(type="text")
+     * @Groups({"api"});
      */
     private $content;
 
     /**
      * @ORM\Column(type="smallint")
+     * @Groups({"api"});
      */
     private $visible;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"api"});
      */
     private $created_at;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"api"});
      */
     private $updated_at;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Users", inversedBy="comments")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"api"});
      */
     private $user;
 

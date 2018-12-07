@@ -17,13 +17,13 @@ class ProductCartOption
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\ProductCart", inversedBy="productCartOptions")
+     * @ORM\ManyToOne(targetEntity="App\Entity\ProductCart", inversedBy="productCartOptionsCart")
      * @ORM\JoinColumn(nullable=false)
      */
     private $cart;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\ProductCart", inversedBy="productCartOptions")
+     * @ORM\ManyToOne(targetEntity="App\Entity\ProductCart", inversedBy="productCartOptionsProduct")
      * @ORM\JoinColumn(nullable=false)
      */
     private $product;

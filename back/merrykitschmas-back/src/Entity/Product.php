@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
@@ -15,51 +16,61 @@ class Product
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer", unique=true)
+     * @Groups({"api"});
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"api"});
      */
     private $name;
 
     /**
      * @ORM\Column(type="float", scale=2)
+     * @Groups({"api"});
      */
     private $price;
 
     /**
      * @ORM\Column(type="text", length=255)
+     * @Groups({"api"});
      */
     private $description;
 
     /**
      * @ORM\Column(type="text", length=255, nullable=true)
+     * @Groups({"api"});
      */
     private $image;
 
    /**
      * @ORM\Column(type="smallint")
+    * @Groups({"api"});
      */
     private $visible;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"api"});
      */
     private $created_at;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"api"});
      */
     private $updated_at;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="product", orphanRemoval=true, cascade={"persist"})
+     * @Groups({"api"});
      */
     private $comments;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\OptionPurchase", mappedBy="products")
+     * @Groups({"api"});
      */
     private $options;
 
@@ -80,6 +91,7 @@ class Product
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\ProductParameter", mappedBy="product", orphanRemoval=true, cascade={"persist"})
+     * @Groups({"api"});
      */
     private $productParameters;
 
