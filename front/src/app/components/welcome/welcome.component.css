@@ -6,21 +6,19 @@ mat-card {
 }
 
 mat-grid-tile {
-    /* background: lightblue; */
     display: flex;
     flex-wrap: wrap;
 }
 
 img {
-    /* padding: 0.8vw 0; */
-    width: 350px;
+    width: 325px;
     height: 100%;
     object-fit: cover;
 }
 
 h2 {
     margin: 0;
-    font-size: 36px;
+    font-size: 24px;
     color: black;
 }
 
@@ -29,7 +27,6 @@ a {
 }
 
 .card-container {
-    /* background-color: #fff; */
     text-align: center;
     padding: 0;
     margin: 0;
@@ -41,20 +38,22 @@ a {
 }
 
 .card-image {
-    /* background-color: red; */
     height: 70%;
     width: 100%;
 }
 
 .card-title {
-    /* background-color: blue; */
     height: 8%;
     width: 100%;
 }
 
 .card-info {
-    /* background-color: lightcoral; */
     height: 22%;
     width: 100%;
 }
 
+p {
+    font-size: 12px;
+    margin-bottom:0 0 8px 0;
+    padding: 0;
+}
