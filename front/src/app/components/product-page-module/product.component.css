@@ -1,17 +1,27 @@
-.img-main-description {
-  display: flex;
+.main {
+    display: flex;
+    flex-direction: row;
 }
-  .img-main {
-    flex-direction: row;
-    height: 500px;
-    width: 350px;
-  }
-
-  .description {
-    flex-direction: row;
-    margin-left: 30px;
-  }
-    .price {
-      font-size: 3rem;
-      font-weight: bold;
+    .picture {
+        margin: 0 20px 20px 0;
     }
+
+    .description {
+    }
+
+.recommendations {
+}
+
+.comments {
+    margin-bottom: 20px;
+}
+
+
+/* En mode tablettes & mobile */
+@media screen and (max-width: 1100px) {
+    .main {
+        display: flex;
+        flex-wrap: wrap;  /* les cells passent les unes sous les autres */
+        justify-content: space-around; /* Les cells prennent tout l'espace de la Grid */
+    }
+}
