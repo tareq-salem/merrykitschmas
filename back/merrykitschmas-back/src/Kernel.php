@@ -8,7 +8,6 @@ use Symfony\Component\Config\Resource\FileResource;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel as BaseKernel;
 use Symfony\Component\Routing\RouteCollectionBuilder;
-use Nelmio\CorsBundle\NelmioCorsBundle;
 
 class Kernel extends BaseKernel
 {
@@ -35,7 +34,6 @@ class Kernel extends BaseKernel
             }
         }
         $bundles = array(
-            new NelmioCorsBundle(),
         );
     }
 
