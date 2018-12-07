@@ -1,5 +1,10 @@
 <mat-toolbar>
-    <mat-checkbox class="example-margin">Tri par date</mat-checkbox>
-    <mat-checkbox class="example-margin">Tri par prix</mat-checkbox>
-    <mat-checkbox class="example-margin">Tri par popularité</mat-checkbox>
+        <mat-radio-group [(ngModel)]="labelPosition">
+           <mat-radio-button *ngFor="let order of orders">
+               Tri par {{order}}
+           </mat-radio-button>
+        </mat-radio-group>
+    <!-- <mat-checkbox>Tri par date</mat-checkbox>
+    <mat-checkbox>Tri par prix</mat-checkbox>
+    <mat-checkbox>Tri par popularité</mat-checkbox> -->
 </mat-toolbar>

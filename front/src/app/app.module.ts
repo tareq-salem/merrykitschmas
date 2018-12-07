@@ -44,7 +44,8 @@ import {
     MatCardModule,
     MatSelectModule,
     MatExpansionModule,
-    MatGridListModule
+    MatGridListModule,
+    MatRadioModule
 } from '@angular/material';
 
 
@@ -107,6 +108,7 @@ const routes: Routes = [
     MatSelectModule,
     MatExpansionModule,
     MatGridListModule,
+    MatRadioModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
