@@ -52,16 +52,6 @@ import {
 
 // ROUTES
 import { RouterModule, Routes } from '@angular/router';
-
-import { ProductDescriptionComponent } from './components/product-page-module/product-description/product-description.component';
-import { ProductPictureComponent } from './components/product-page-module/product-picture/product-picture.component';
-import {
-  ProductUsersCommentsDetailsComponent
-} from './components/product-page-module/product-users-comments-details/product-users-comments-details.component';
-import { AddReviewComponent } from './components/product-page-module/product-users-comments-details/add-review/add-review.component';
-import { ListReviewsComponent } from './components/product-page-module/product-users-comments-details/list-reviews/list-reviews.component';
-
-
 const routes: Routes = [
   { path: '', component: WelcomeComponent},
   { path: 'product/id', component: ProductComponent},
