@@ -42,7 +42,7 @@ class Comment
     private $updated_at;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Users", inversedBy="comments")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="comments")
      * @ORM\JoinColumn(nullable=false)
      * @Groups({"api"});
      */
@@ -109,12 +109,12 @@ class Comment
         return $this;
     }
 
-    public function getUser(): ?Users
+    public function getUser(): ?User
     {
         return $this->user;
     }
 
-    public function setUser(?Users $user): self
+    public function setUser(?User $user): self
     {
         $this->user = $user;
 

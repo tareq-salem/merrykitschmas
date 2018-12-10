@@ -7,10 +7,9 @@ use App\Entity\Comment;
 use App\Entity\OptionPurchase;
 use App\Entity\Product;
 use App\Entity\ProductParameter;
-use App\Entity\Role;
 use App\Entity\Subcategory;
 use App\Entity\Theme;
-use App\Entity\Users;
+use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -19,6 +18,7 @@ class AppFixtures extends Fixture
 {
     private $encoder;
 
+
     public function __construct(UserPasswordEncoderInterface $encoder)
     {
         $this->encoder = $encoder;
@@ -26,29 +26,16 @@ class AppFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        //CREATION DES ROLES
-        $userRole = new Role();
-        $userRole->setName('user');
-        $manager->persist($userRole);
-
-
-        $adminRole = new Role();
-        $adminRole->setName('admin');
-        $manager->persist($adminRole);
-
-        $manager->flush();
-
-
 
         //CREATION DE L'ADMIN
         $dateTime = new \DateTime();
-        $admin = new Users();
+        $admin = new User();
         $admin->setUsername('admin');
         //$password = $this->encoder->encodePassword($admin, 'password');
         $admin->setPassword('password');
         $admin->setIsactive(1);
         $admin->setCreatedAt($dateTime);
-        $admin->setRole($adminRole);
+        $admin->setRoles(['ROLE_ADMIN']);
 
         $manager->persist($admin);
         $manager->flush();
@@ -57,12 +44,15 @@ class AppFixtures extends Fixture
         for($j = 0; $j < 10; $j++)
         {
             $dateTime = new \DateTime();
-            $user = new Users();
+            $user = new User();
             $user->setUsername('user'.$j);
-            $user->setPassword('password'.$j);
+            $user->setPassword($this->encoder->encodePassword(
+                $user,
+                'password'.$j
+            ));
             $user->setIsactive(1);
             $user->setCreatedAt($dateTime);
-            $user->setRole($userRole);
+            $user->setRoles(['ROLE_USER']);
             $manager->persist($user);
         }
 
@@ -131,7 +121,7 @@ class AppFixtures extends Fixture
             "Mauris lacinia sapien quis libero.", "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.", "Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum.",
             "Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim.", "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.",
             "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.", "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.", "Morbi non quam nec dui luctus rutrum.");
-        $users = $manager->getRepository(Users::class)->findAll();
+        $users = $manager->getRepository(User::class)->findAll();
 
         //CREATION DE PRODUITS
         $sizes = ['S', 'M', 'L', 'XL', 'XXL', 'Unique', '36 - 39', '40 - 43', '44 - 46'];

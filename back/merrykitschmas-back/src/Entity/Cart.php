@@ -19,7 +19,7 @@ class Cart
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Users", inversedBy="cart", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\User", inversedBy="cart", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
@@ -39,12 +39,12 @@ class Cart
         return $this->id;
     }
 
-    public function getUser(): ?Users
+    public function getUser(): ?User
     {
         return $this->user;
     }
 
-    public function setUser(Users $user): self
+    public function setUser(User $user): self
     {
         $this->user = $user;
 
